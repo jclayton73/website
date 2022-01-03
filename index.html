@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="front.css">
+<link rel="stylesheet" type="text/css" href="home_var.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="cookie.js"></script>
+<script src="fade.js"></script>
+
+<meta charset="UTF-8">
+<title>home</title>
+</head>
+
+<body onunload=leaving()>
+<img src="me-wink.png" style="display:none" />
+<div id="front">
+    <img src="me-nowink.png" height="65%" id="cartoon" />
+    <h1 class="shadow">Jackson Clayton
+    <svg width="130" height="70" class="enter-button" onclick=enter()>
+        <rect width="120" height="60" x="5" y="5" rx="30" ry="30" class="enter-button"/>
+        <text x="25" y="40" class="enter-button"> enter </text>
+    </svg>
+    </h1>
+</div>
+
+<div class="main-content">
+  <div class="page-content">
+  <h1>Hello,</h1>
+  <h2> my name is <span class="shadow"> jackson</span>, thank you for visiting.</h2>
+  <p> i am an ameautuer roller blader who is also passionate about programming, tap dance, and houseplants. </p>
+  <p> if you would like to learn more or get in touch with me, visit the about me page. </p>
+ <p>  if you want to know about upcoming dhows, visit the tap dance page. </p>
+</div>
+
+ <nav style="background:rgba(0,0,0,0)"> 
+     <div class="flower-container">
+         <img class="flower flower_bottom" src="flower_bottom.svg"/>
+         <img class="flower flower_middle" src="flower_middle.svg"/>
+         <img class="flower flower_top" src="flower_top.svg"/>
+     </div>
+
+
+     <a href="">about me </a> 
+       <a href="tapdance.html">tap dance </a> 
+       <a href=""> projects </a>
+ </nav>
+
+</div>
+
+</body>
+<script>
+if(getCookie('fs') != ""){
+    console.log('from site');
+    $('h1').css({"animation-name":"focus", "animation-timing-function":"ease-in", "animation-duration":"1s","animation-fill-mode":"both"});
+    // $('p').css({"animation-name":"focus_p", "animation-delay":"2.5s", "animation-timing-function":"ease-in", "animation-duration":"1s","animation-fill-mode":"both"});
+    // $('span.shadow').css({"animation-name":"focus_s", "animation-delay":"2.5s", "animation-timing-function":"ease-in", "animation-duration":"1s","animation-fill-mode":"both"});
+
+    $('html').css({"top":"-100vh", "overflow":"initial",	"background":"#e3f5d5"});
+    $('body').css({"overflow":"scroll", "height":"max-content"});
+}
+
+function enter() {
+    var cartoon = document.getElementById('cartoon');
+    cartoon.style.transform = "rotate(-7deg)";
+    cartoon.src = "me-wink.png";
+    window.history.pushState({html: document.body.innerHTML, title: "title"}, "", "home");
+
+    history.pushState(null, null, url);
+    var html = document.getElementsByTagName("html")[0];
+    html.style.animation = "enter 1.5s .5s ease forwards";
+    var bod = document.getElementsByTagName("body")[0];
+    bod.style.overflow = "initial";
+    bod.style.height = "max-content";
+    var hello = document.getElementsByTagName("h1")[1];
+    $('nav').addClass("--enter_n");
+    // hello.style.animation = "focus ease-in 1s 1.5s both";
+    calculateStart();
+}
+
+function leaving(){
+    setCookie('fs', 2, 2);
+    $( document ).scrollTop(1);
+    $( document ).scrollTop(0);
+}
+</script>
+</html>
