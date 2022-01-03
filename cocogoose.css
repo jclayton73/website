@@ -1,0 +1,27 @@
+@font-face {
+    font-family: cocogoose;
+    src: url(cocogoose.ttf);
+}
+
+@font-face {
+    font-family: cocogoose;
+    src: url(cocogoose-300.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+        font-family: Archivo-Black;
+        src: url(Archivo_Black/ArchivoBlack-Regular.ttf);
+        font-weight: 900;
+}
+
+@font-face {
+        font-family: Heebo;
+        src: url(Heebo/Heebo-Medium.ttf);
+        font-weight: 500;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto/Roboto-Light.ttf);
+}
